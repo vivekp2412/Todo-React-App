@@ -16,11 +16,11 @@ type dateObjectFormat={
 function Card():JSX.Element {
   const [showInput,setShowInput]=useState(false);
     const date:dateObjectFormat = useDate();
+    //Function to Show the input field
     function handleAddEvent(){
-       
             setShowInput(true)
-        
        }
+    // Function to hide the input field
     function handleEscape(e:any){
         if(e.key=="Escape"){
             setShowInput(false);
