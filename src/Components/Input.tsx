@@ -1,9 +1,12 @@
 import React from 'react';
 import "./Input.css"
-function Input(props:any) {
+type Props={
+    event:()=>void
+}
+function Input(props:Props) {
     return (
         <form>
-            <input className='taskInput' type="text" placeholder='Enter the Task' onKeyDown={props.event} autoFocus></input>
+            <input className='taskInput' type="text" placeholder='Enter the Task' onKeyDown={(e)=>{if(e.key=="Escape"){props.event()}}} autoFocus></input>
         </form>
         )
     }

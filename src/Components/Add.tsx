@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import "./Add.css"
-
+type Props = {
+  event:()=>void
+}
 //Returns Add button 
-function Add(props:any):JSX.Element {
+function Add(props:Props):JSX.Element {
 
     return (
       <>

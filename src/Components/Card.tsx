@@ -21,10 +21,8 @@ function Card():JSX.Element {
             setShowInput(true)
        }
     // Function to hide the input field
-    function handleEscape(e:any){
-        if(e.key=="Escape"){
+    function handleEscape(){
             setShowInput(false);
-        }
     }
     return (
         <div className='card'>
