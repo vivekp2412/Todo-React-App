@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useDate from '../Hooks/useDate';
 import Add from './Add';
 import "./Card.css"
+import Input from './Input';
 import Task from './Task';
+
+
 type dateObjectFormat={
     month:string,
     day:string,
     dateValue:number,
     year:number
 }
+// Returns a card Where dare and Task are Displayed
 function Card():JSX.Element {
+  const [showInput,setShowInput]=useState(false);
     const date:dateObjectFormat = useDate();
+    function handleAddEvent(){
+       
+            setShowInput(true)
+        
+       }
+    function handleEscape(e:any){
+        if(e.key=="Escape"){
+            setShowInput(false);
+        }
+    }
     return (
         <div className='card'>
             <div className='date-day'>          
@@ -26,7 +41,7 @@ function Card():JSX.Element {
              </div>
             </div>
             <Task/>
-           <Add/>
+           {showInput ? <Input event={handleEscape}/> :<Add event={handleAddEvent}/>}
         </div>
     );
 }

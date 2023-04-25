@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+// Format of the data to be Returned by use Date Hook
 type dateObjectFormat={
     month:string,
     day:string,
     dateValue:number,
     year:number
 }
+// Use date Hook Made which returns the Updated date
 const useDate  =():dateObjectFormat =>{
     const [dateObject,setDate]=useState({month:"",day:"",year:0,dateValue:0});
     const Weekdays:string[] = ["Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday","Saturday"];

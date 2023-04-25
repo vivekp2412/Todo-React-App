@@ -7,7 +7,7 @@ function App():JSX.Element {
 
   return (
   <div className='App'>
-  <Card></Card>
+  <Card/>
   </div>
   )
 }
